@@ -1,0 +1,24 @@
+/* JavaScript 출력
+
+ 1. window.alert()
+ 2. innerHTML 프로퍼티
+ 3. document.write()
+ 4. console.log()
+
+
+
+  1. window.alert()
+      : 브라우저와 별도의 대화 상자를 띄워 사용자에게 데이터 전달
+  2. HTML DOM 요소를 이용한 innerHTML 프로퍼티
+      :                                                         */
+        var str = document.getElementById('text');
+        str.innerHTML("Success");
+/*
+  3. document.write()
+      : 웹 페이지가 로딩될 때, 가장 먼저 데이터를 출력 / 주로 테스트, 디버깅을 위해 사용
+        실행될 때 웹 페이지에 로딩된 모든 데이터를 삭제 후 출력 *주의*
+  
+  4. console.log()
+      : 웹 프라우저의 콘솔을 통해 데이터를 출력
+
+*/

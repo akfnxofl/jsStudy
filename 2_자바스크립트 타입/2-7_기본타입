@@ -1,0 +1,43 @@
+JavaScript Type
+
+1. 기본 타입
+  1) 숫자(number)
+  2) 문자열(string)
+  3) 불리언(boolean)
+  4) 심볼(symbol) - ES6부터 제공
+  5) undefined, null
+  6) 객체(object)
+
+
+  1) 숫자(number)
+      var firstNum = 10;
+      var secondNum = 10.00;
+      var thirdNum = 10e3;    // 1000
+      var fourthNum = 10e-3;  // 0.001
+  2) 문자열(string)
+      var firstStr = "123456"; // "" 사용
+      var secondStr = '123456'; // '' 사용
+      var thirdStr = "my name is 'sunghyun'!"; // ''출력 ""출력은 반대로
+  2-1) 숫자 + 문자열
+      var num = 10;
+      var str = 'JavaScript';
+      document.getElementById("result").innerHTML = (num + str); // 10JavaScript
+  3) 불리언(boolean)
+      var firstNum = 10;
+      var secondNum = 20;
+      var thirdNum = 10;
+      (firstNum == secondNum) -> false
+      (fristNum == thirdNum) -> true
+  4) 심볼(symbol) : 유일하고 변경할 수 없는 타입, 객체의 프로퍼티를 위한 식별자로 사용 가능
+      var sym = Symbol('javascript'); // symbol 타입
+      var symObj = Object(sym); // object 타입
+  5) undefined, null
+      var num; // 초기화되지 않았기 때문에 undefined 값을 반환
+      var str = null;  //object 타입의 null 값
+      typeof secondNum; // 정의되지 변수에 접근하면 undefined 값을 반환
+
+      null == undefined;  // true 
+      null === undefined; // false
+  6) 객체(object)
+      var dog = {name: 'happy', age: 3}; // 객체의 생성
+      {key: value, ...} 형식
