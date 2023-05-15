@@ -1,4 +1,4 @@
-JavaScript Type
+/* JavaScript Type
 
 1. 기본 타입
   1) 숫자(number)
@@ -40,4 +40,4 @@ JavaScript Type
       null === undefined; // false
   6) 객체(object)
       var dog = {name: 'happy', age: 3}; // 객체의 생성
-      {key: value, ...} 형식
+      {key: value, ...} 형식 */
