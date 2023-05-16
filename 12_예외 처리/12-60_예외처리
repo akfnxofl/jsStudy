@@ -1,0 +1,44 @@
+예외 처리
+
+예외(exception)란 프로그램이 실행 중에 발생하는 런타임 오류를 의미
+
+예외 발생
+throw키워를 사용하여 예외 발생
+throw 표현식; -> 표현식에는 예외코드를 나타내는 숫자, 오류메세지를 담고 있는 문자열, Error 객체 등이 올 수 있다.
+
+예외 처리
+: 예외 처리를 위해 try / catch / finally 문을 사용
+
+try{
+  예외를 처리하길 원하는 실행 코드;
+} catch (ex) {
+  에외가 발생할 경우에 실행될 코드;
+} finally {
+  try 블록이 종료되면 무조건 실행되는 코드;
+}
+
+1. try{} : 가장 먼저 실행되는 코드, 이때 발생한 예외는 catch 블록에서 처리될 수 있다.
+2. catch{} : try{} 발생한 예외 코드나 Error 객체를 인수로 받아 그 처리를 담당 // 선택적 블록
+3. finally{} : try{}에서 예외 발생 여부에 관계 없이 마지막에 무조건 실행
+
+적합한 try 구문
+1. try / catch
+2. try / finally
+3. try / catch / finally
+
+Error 객체
+: 런타임 오류가 발생할 때마다 Error 객체의 인스턴스가 만들어저 해당 오류의 정보를 저장
+
+ex:
+
+var btn = document.getElementById("throwExBtn");      // 아이디가 "throwExBtn"인 요소를 선택함.
+btn.addEventListener("click", throwEx);               // 선택한 요소에 click 이벤트 리스너를 등록함.
+
+function throwEx() {
+    try {
+        throw new Error("직접 발생시킨 오류입니다!"); // Error 객체를 사용해 명시적으로 오류를 발생시킴.
+    } catch (ex) { // 발생된 오류를 매개변수 ex로 접근할 수 있음.
+        document.getElementById("text").innerHTML = ex.name + "<br>"; // name 프로퍼티는 오류의 타입을 저장함.
+        document.getElementById("text").innerHTML += ex.message;   // message 프로퍼티는 오류 메시지를 저장함.
+    }
+}
