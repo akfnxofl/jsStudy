@@ -1,0 +1,61 @@
+매개변수와 인수
+
+매개변수(parameter)
+:함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수
+
+인수(argument)
+:함수가 호출될 때 함수로 값을 전달해주는 값을 의미
+
+function addNum(x, y, z) { // x, y, z라는 3개의 매개변수를 가지는 함수 addNum()을 정의함.
+    return x + y + z;
+}
+
+addNum(1, 2, 3); // 1 + 2 + 3 = 6
+addNum(1, 2);    // 1 + 2 + undefined = NaN
+addNum(1);       // 1 + undefined + undefined = NaN
+addNum();        // undefined + undefined + undefined = NaN
+
+arguments 객체
+: 함수가 호출될 때 전달된 인수를 배열의 형태로 저장 / 함수로 전달된 인수의 총 개수 확인 및 바로 접근 가능
+ ** arguments 객체는 배열과 비슷할 뿐, 실제로 Array 객체는 아니다. 숫자인덱스와 length만 가지고 있다. **
+function addNum() {
+    var sum = 0;                                // 합을 저장할 변수 sum을 선언함.
+    for(var i = 0; i < arguments.length; i++) { // 전달받은 인수의 총 수만큼 반복함.
+        sum += arguments[i];                    // 전달받은 각각의 인수를 sum에 더함.
+    }
+    return sum;
+}
+
+addNum(1);       // 1
+addNum();        // 0
+addNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
+
+
+디폴트 매개변수
+: 함수를 호출할 때 명시된 인수를 전달하지 않았을 때 사용할 기본값을 의미
+
+function mul(a, b) {
+  b =(typeof b !== 'undefined') ? b : 1; // b의 타입이 undefined이 아닐경우 b값을 지정하고, undefined일 경우 1을 지정
+}
+
+위의 코드를 디폴트 매개변수를 활용하여 표현하면 다음과 같다.
+
+function mul(a, b = 1) {}
+
+나머지 매개변수
+: 생략 접두사(...)를 사용하여 특정 위치 인수부터 마지막 인수까지 한 번에 지정 가능
+
+function sub(){
+  let firstNum = arguments[0];
+  for(let i = 0; i < arguments.length-1; i++){
+    firstNum -= arguments[i+1];
+  }
+}
+
+위의 코드를 나머지 매개변수를 사용하여 표현하면 다음과 같다.
+
+function sub(firstNum, ...restArgs) {
+  for(let i = 0; i < restArgs.length; i++) {
+    firstNum -= restArgs[i];
+  }
+}

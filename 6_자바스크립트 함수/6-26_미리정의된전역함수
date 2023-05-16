@@ -1,0 +1,41 @@
+// 미리 정의된 전역함수
+
+
+// 1. eval()                 : eval('10 + 20'); -> 30
+// 문자열로 표현된 코드를 실행
+
+// 2. isFinite()             : isFinite(123); -> true / isFinite(undefined); -> false
+// 전달된 값이 유한한 수인지 검사 / 전달된 값이 숫자가 아니라면, 숫자로 변환
+
+// 3. isNaN()                : isNaN(123); -> false / isNaN("문자열"); -> true
+// 전달된 값이 숫자인지 확인 instead of typeof
+
+// 4. parseFloat()           : parseFloat("123.000"); -> 123 / parseFloat(" 123 "); -> 123 / parseFloat("123 초콜릿"); -> 123
+// 문자열을 파싱하여 부동 소수점 수로 변환
+
+// 5. parseInt()             : parseInt("123.000"); -> 123 / parseFloat(" 123 "); -> 123 / parseFloat("123 초콜릿"); -> 123
+// 문자열을 파싱하여 정수로 반환
+
+// 6. decodeURI()            : decodeURI(해독할URI);
+// encodeURI() 또는 다른 방법으로 만들어진 URI를 해독
+
+// 7. decodeURIComponent()   : decodeURIComponent(해독할URI);
+// encodeURIComponets() 또는 다른방법으로 만들어진 URI 컴포넌트를 해독
+
+// 8. encodeURI()            : encodeURI(부호화할URI);
+// URI에서 주소를 표시하는 특수문자를 제외한 모든 문자를 이스케이프 시퀸스 처리하여 부호화
+
+// 9. encodeURIComponent()   : encodeURIComponent(부호화할URI);
+// encodeURI()에서 부호화하지 않은 모든 문자까지 포함하여 모두 이스케이프 시퀸스 처리하여 부호화
+
+// 10. escape()              : escape("변환할문자열");
+// 전달받은 문자열에서 특정 문자를 16진법 이스케이프 시퀸스 문자로 변환
+
+// 11. unescape()            : unescape("원래대로변환할문자열");
+// 변환한 16진법 이스케이프 시퀸스 문자를 원래의 문자로 변환
+
+// 12. Number()              : Number("123"); -> 123
+// 전달받은 객체의 값을 숫자로 변환
+
+// 13. String()              : String("123"); -> 123
+// 전달받은 객체의 값을 문자열로 변환
