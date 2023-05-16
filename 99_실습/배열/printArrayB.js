@@ -1,3 +1,3 @@
-const ss = require('./reverseArrayA.js');
+const fs = require('./reverseArrayA.js');
 
-console.log(ss.arrayB);
+console.log(fs.arrayB);
